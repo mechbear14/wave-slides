@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shader test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container"></div>
+    <script id="vertexShader" type="x-shader/x-vertex">
+    {% include "test.vert" %}
+    </script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+    {% include "../../shaders/slide13.frag" %}
+    </script>
+    <script src="three.js"></script>
+    <script src="main.js"></script>
+    <script src={{refreshScript}}></script>
+  </body>
+</html>

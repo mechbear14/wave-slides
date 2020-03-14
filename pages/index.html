@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wave slides</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
   </head>
   <body>
     <div class="container">
@@ -53,10 +54,10 @@
                 </p>
                 <p>
                   Its amplitude is 1. Its phase angle increases at a constant
-                  pace.
+                  pace, or a constant frequency.
                 </p>
                 <p>
-                  Can we make some changes?
+                  But can we make some changes?
                 </p>
               </div>
             </div>
@@ -71,11 +72,37 @@
                   Can we make its amplitude change like a sine function?
                 </p>
                 <p>
-                  Yes, we can.
+                  Yes, we can. That's called amplitude modulation (AM).
                 </p>
                 <p>
-                  That's called amplitude modulation.
+                  Try AM-ing with a sine wave of these properties.
                 </p>
+              </div>
+              <div class="ctrl">
+                <div class="labelled-slider">
+                  <label for="slide-4-a-input">Amplitude</label>
+                  <input
+                    type="range"
+                    id="slide-4-a-input"
+                    min="0.0"
+                    max="0.5"
+                    step="0.05"
+                    value="0.1"
+                  />
+                  <span id="slide-4-a-value">0.1 </span>
+                </div>
+                <div class="labelled-slider">
+                  <label for="slide-4-w-input">Frequency</label>
+                  <input
+                    type="range"
+                    id="slide-4-w-input"
+                    min="0.0"
+                    max="2.0"
+                    step="0.2"
+                    value="1.0"
+                  />
+                  <span id="slide-4-w-value">1.0 </span>
+                </div>
               </div>
             </div>
           </div>
@@ -93,8 +120,35 @@
                   Do we have to walk at a constant speed?
                 </p>
                 <p>
-                  Of course not. Walk at a speed of sine function, if you like.
+                  Of course not. This is called frequency modulation.
                 </p>
+                <p>Now try FM-ing the sine wave.</p>
+              </div>
+              <div class="ctrl">
+                <div class="labelled-slider">
+                  <label for="slide-5-a-input">Amplitude</label>
+                  <input
+                    type="range"
+                    id="slide-5-a-input"
+                    min="0.0"
+                    max="5.0"
+                    step="0.5"
+                    value="2.0"
+                  />
+                  <span id="slide-5-a-value">2.0 </span>
+                </div>
+                <div class="labelled-slider">
+                  <label for="slide-5-w-input">Frequency</label>
+                  <input
+                    type="range"
+                    id="slide-5-w-input"
+                    min="0.0"
+                    max="2.0"
+                    step="0.2"
+                    value="1.0"
+                  />
+                  <span id="slide-5-w-value">1.0 </span>
+                </div>
               </div>
             </div>
           </div>
@@ -128,6 +182,20 @@
                   wave of surprising shapes.
                 </p>
               </div>
+              <div class="ctrl">
+                <div class="labelled-slider">
+                  <label for="slide-7-degree-input">Degree</label>
+                  <input
+                    type="range"
+                    id="slide-7-degree-input"
+                    min="1"
+                    max="5"
+                    step="1"
+                    value="3"
+                  />
+                  <span id="slide-7-degree-value">3 </span>
+                </div>
+              </div>
             </div>
           </div>
         </li>
@@ -147,6 +215,20 @@
                   called the signal's ...
                 </p>
               </div>
+              <div class="ctrl">
+                <div class="labelled-slider">
+                  <label for="slide-8-degree-input">Degree</label>
+                  <input
+                    type="range"
+                    id="slide-8-degree-input"
+                    min="1"
+                    max="5"
+                    step="1"
+                    value="3"
+                  />
+                  <span id="slide-8-degree-value">3 </span>
+                </div>
+              </div>
             </div>
           </div>
         </li>
@@ -159,6 +241,79 @@
                   Have a play with the panel. You can change the amplitude of
                   each frequency.
                 </p>
+                <p>
+                  Hint: try 1.0, 0.5, 0.35, 0.25 and 0.2, also 1.0, 0.0, 0.35,
+                  0.0 and 0.2.
+                </p>
+              </div>
+              <div class="ctrl">
+                <div class="freq-panel">
+                  <div class="vertical-slider">
+                    <label for="slide-9-a1-input">1Hz</label>
+                    <input
+                      type="range"
+                      id="slide-9-a1-input"
+                      min="0.0"
+                      max="1.0"
+                      step="0.05"
+                      value="1.0"
+                      orient="vertical"
+                    />
+                    <span id="slide-9-a1-value">1 </span>
+                  </div>
+                  <div class="vertical-slider">
+                    <label for="slide-9-a2-input">2Hz</label>
+                    <input
+                      type="range"
+                      id="slide-9-a2-input"
+                      min="0.0"
+                      max="1.0"
+                      step="0.05"
+                      value="0.0"
+                      orient="vertical"
+                    />
+                    <span id="slide-9-a2-value">0 </span>
+                  </div>
+                  <div class="vertical-slider">
+                    <label for="slide-9-a3-input">3Hz</label>
+                    <input
+                      type="range"
+                      id="slide-9-a3-input"
+                      min="0.0"
+                      max="1.0"
+                      step="0.05"
+                      value="0.0"
+                      orient="vertical"
+                    />
+                    <span id="slide-9-a3-value">0 </span>
+                  </div>
+                  <div class="vertical-slider">
+                    <label for="slide-9-a4-input">4Hz</label>
+                    <input
+                      type="range"
+                      id="slide-9-a4-input"
+                      min="0.0"
+                      max="1.0"
+                      step="0.05"
+                      value="0.0"
+                      orient="vertical"
+                    />
+                    <span id="slide-9-a4-value">0 </span>
+                  </div>
+                  <div class="vertical-slider">
+                    <label for="slide-9-a5-input">5Hz</label>
+                    <input
+                      type="range"
+                      id="slide-9-a5-input"
+                      min="0.0"
+                      max="1.0"
+                      step="0.05"
+                      value="0.0"
+                      orient="vertical"
+                    />
+                    <span id="slide-9-a5-value">0 </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -203,9 +358,36 @@
                   Roar! What is this?
                 </p>
                 <p>
-                  This is called Lissajous figure.
+                  This is called Lissajous figure. Try playing with its x and y
+                  frequencies.
                 </p>
                 <p>You know what's most fun about it?</p>
+              </div>
+              <div class="ctrl">
+                <div class="labelled-slider">
+                  <label for="slide-12-xfreq-input">X Frequency</label>
+                  <input
+                    type="range"
+                    id="slide-12-xfreq-input"
+                    min="1"
+                    max="5"
+                    step="1"
+                    value="1"
+                  />
+                  <span id="slide-12-xfreq-value">1 </span>
+                </div>
+                <div class="labelled-slider">
+                  <label for="slide-12-yfreq-input">Y Frequency</label>
+                  <input
+                    type="range"
+                    id="slide-12-yfreq-input"
+                    min="1"
+                    max="5"
+                    step="1"
+                    value="1"
+                  />
+                  <span id="slide-12-yfreq-value">1 </span>
+                </div>
               </div>
             </div>
           </div>
@@ -218,6 +400,10 @@
                   It looks like fireflies around us.
                 </p>
                 <p>
+                  (Hint: Go to previous slide. Set X frequency to 4 and Y
+                  frequency to 5.)
+                </p>
+                <p>
                   The end
                 </p>
               </div>
@@ -226,6 +412,8 @@
         </li>
       </ul>
     </div>
+    <script src="js/three.js"></script>
+    <script src="js/shaders.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

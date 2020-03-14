@@ -72,6 +72,17 @@
   margin-bottom: 1.2rem;
 }
 
+.slide-group .slide .slide-content .ctrl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.slide-group .slide .slide-content .ctrl .freq-panel {
+  display: flex;
+}
+
 .button {
   width: 10rem;
   height: 40px;
@@ -174,6 +185,9 @@
   }
   .slide-group .slide .slide-content {
     padding: 20px 70px;
+  }
+  .slide-group .slide .slide-content .flex {
+    flex-direction: row;
   }
   .button.prev {
     transform: translate(-50%, -50%) rotate(-90deg);

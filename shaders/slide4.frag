@@ -1,13 +1,15 @@
 uniform float u_time;
 uniform vec2 u_resolution;
+uniform float a;
+uniform float w;
 
 float function(float x) {
-    float y = (0.5 + 0.3 * sin(x)) * sin(5.0 * x);
+    float y = (0.5 + a * sin(w * x)) * sin(5.0 * x);
     return y;
 }
 
 float derivative(float x) {
-    float dydx = 0.5 * 5.0 * cos(5.0 * x) + 0.3 * (1.0 * cos(x) * sin(5.0 * x) + 5.0 * sin(x) * cos(5.0 * x));
+    float dydx = 0.5 * 5.0 * cos(5.0 * x) + a * (w * cos(w * x) * sin(5.0 * x) + 5.0 * sin(w * x) * cos(5.0 * x));
     return dydx;
 }
 

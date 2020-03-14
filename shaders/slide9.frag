@@ -1,21 +1,29 @@
 uniform float u_time;
 uniform vec2 u_resolution;
-uniform int degree;
+uniform float a1;
+uniform float a2;
+uniform float a3;
+uniform float a4;
+uniform float a5;
 
 float function(float x) {
     float y = 0.0;
-    for(int i = 0; i < 5; i ++ ) {
-        y += (1.0 - step(float(degree) - 0.5, float(i))) * (1.0 / float(i) * sin(2.0 * float(i) * x));
-    }
+    y += a1 * sin(2.0 * x);
+    y += a2 * sin(4.0 * x);
+    y += a3 * sin(6.0 * x);
+    y += a4 * sin(8.0 * x);
+    y += a5 * sin(10.0 * x);
     // float y = sin(2.0 * x) + 1.0 / 2.0 * sin(4.0 * x) + 1.0 / 3.0 * sin(6.0 * x) + 1.0 / 4.0 * sin(8.0 * x);
     return y;
 }
 
 float derivative(float x) {
     float dydx = 0.0;
-    for(int i = 0; i < 5; i ++ ) {
-        dydx += (1.0 - step(float(degree) - 0.5, float(i))) * 2.0 * cos(2.0 * float(i) * x);
-    }
+    dydx += a1 * 2.0 * cos(2.0 * x);
+    dydx += a2 * 4.0 * cos(4.0 * x);
+    dydx += a3 * 6.0 * cos(6.0 * x);
+    dydx += a4 * 8.0 * cos(8.0 * x);
+    dydx += a5 * 10.0 * cos(10.0 * x);
     // float dydx = 2.0 * cos(2.0 * x) + 2.0 * cos(4.0 * x) + 2.0 * cos(6.0 * x) + 2.0 * cos(8.0 * x);
     return dydx;
 }

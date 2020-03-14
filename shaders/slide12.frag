@@ -1,17 +1,19 @@
 uniform float u_time;
 uniform vec2 u_resolution;
+uniform float freqX;
+uniform float freqY;
 
 #define PI 3.14159265358
 
 vec2 paramFunction(float theta, float phaseOffset) {
-    float x = sin(4.0 * theta + phaseOffset);
-    float y = sin(5.0 * theta);
+    float x = sin(freqX * theta + phaseOffset);
+    float y = sin(freqY * theta);
     return vec2(x, y);
 }
 
 vec2 paramDerivative(float theta, float phaseOffset) {
-    float dxdt = 4.0 * cos(4.0 * theta + phaseOffset);
-    float dydt = 5.0 * cos(5.0 * theta);
+    float dxdt = freqX * cos(freqX * theta + phaseOffset);
+    float dydt = freqY * cos(freqY * theta);
     return vec2(dxdt, dydt);
 }
 
@@ -32,10 +34,10 @@ float paramBranchMask(float thickness, float blurRadius, float theta, float phas
 float paramMask(float thickness, float blurRadius, float phaseOffset, vec2 st) {
     float theta = 0.0;
     float mask = 0.0;
-    for(int i = 0; i < 4; i ++ ) {
-        theta = (asin(st.x) - phaseOffset + PI * float(2 * i)) / 4.0;
+    for(int i = 0; i < 5; i ++ ) {
+        theta = (asin(st.x) - phaseOffset + PI * float(2 * i)) / freqX;
         mask = mask + paramBranchMask(thickness, blurRadius, theta, phaseOffset, st);
-        theta = (3.14159265358 - asin(st.x) - phaseOffset + PI * float(2 * i)) / 4.0;
+        theta = (3.14159265358 - asin(st.x) - phaseOffset + PI * float(2 * i)) / freqX;
         mask = mask + paramBranchMask(thickness, blurRadius, theta, phaseOffset, st);
     }
     return clamp(mask, 0.0, 1.0);

@@ -1,14 +1,16 @@
 uniform float u_time;
 uniform vec2 u_resolution;
+uniform float a;
+uniform float w;
 
 float function(float x) {
     // Modulating: 2sin(x)
-    float y = sin(5.0 * x - 2.0 / 1.0 * cos(x));
+    float y = sin(5.0 * x - a / w * cos(w * x));
     return y;
 }
 
 float derivative(float x) {
-    float dydx = cos(5.0 * x - 2.0 / 1.0 * cos(x)) * (5.0 + sin(1.0 * x));
+    float dydx = cos(5.0 * x - a / w * cos(w * x)) * (5.0 + sin(w * x));
     return dydx;
 }
 
